@@ -23,7 +23,7 @@ import org.web3j.utils.Convert;
 import org.web3j.utils.Numeric;
 
 public class Web3RN extends ReactContextBaseJavaModule {
-
+    private Web3j web3j;
     public Web3RN(ReactApplicationContext reactContext) {
         super(reactContext);
     }
@@ -34,13 +34,8 @@ public class Web3RN extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void alert(String message) {
-        Toast.makeText(getReactApplicationContext(), message, Toast.LENGTH_LONG).show();
-    }
-
-    @ReactMethod
-    public void init(String endPoint) {
-        Web3j web3j = Web3j.build(new HttpService(endPoint));
-        return web3j;
+    public String init(String endPoint) {
+        web3j = Web3j.build(new HttpService(endPoint));
+        Toast.makeText(getReactApplicationContext(), 'Web3RN Initiated', Toast.LENGTH_LONG).show();
     }
 }
