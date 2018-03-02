@@ -1,4 +1,4 @@
-#***Wrarngin : Underdevelopment ***
+# ***Warning : Under-Development ***
 # web3-react-native
 Lightweight React Native library for integration with Ethereum clients 
 
